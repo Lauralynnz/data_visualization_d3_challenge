@@ -157,7 +157,7 @@ function visualize(data){
             var theY = `<div>${curY}:${d[curY]}%</div>`;
 
             if(curX == "poverty"){
-                theX = `<div> ${curX}: $(d[curX]}%</div>`
+                theX = `<div> ${curX}: ${d[curX]}%</div>`
             }
             else {
                 theX = `<div> ${curX}: ${parseFloat(d[curX]).toLocaleString("en")}</div>`
@@ -195,7 +195,7 @@ function visualize(data){
     function labelChange(axis, clickedText){
         d3.selectAll(".aText")
         .filter("." + axis)
-        .filter("active")
+        .filter(".active")
         .classed("active", false)
         .classed("inactive", true);
 
@@ -278,6 +278,7 @@ function visualize(data){
         })
         .attr("font-size", circRadius)
         .attr("class", "stateText")
+        .attr("stroke", "black")
         .on("mouseover", function(d){
             toolTip.show(d)
             d3.select(`.${d.abbr}`).style("stroke", "#323232");
