@@ -344,7 +344,7 @@ function visualize(data){
                         d3.select(this)
                         .transition()
                         .attr("dy", function(d){
-                            return yScale(d[curY] + circRadius / 1)
+                            return yScale(d[curY] + circRadius / 5)
                         })
                         .duration(300)
                     })
